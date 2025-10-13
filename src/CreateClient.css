@@ -1,0 +1,90 @@
+/* Container for both CreateClient and ClientUpdate */
+.create-client-container {
+  margin-left: 250px; /* Sidebar offset */
+  min-height: 50vh;
+  padding: 16px; /* Reduced from 20px */
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: margin 0.3s ease;
+  margin-top: 60px; /* Reduced from 60px */
+}
+
+.create-client-container h2 {
+  font-size: 22px; /* Slightly smaller */
+  font-weight: 600;
+  color: #09213b;
+  margin-bottom: 16px; /* Reduced */
+}
+
+/* Shared grid-based form layout */
+.inline-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 14px; /* Reduced gap */
+}
+
+/* Individual form field */
+.inline-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inline-field label {
+  font-weight: 500;
+  margin-bottom: 4px; /* Reduced */
+  color: #334b65;
+}
+
+.inline-field input {
+  padding: 8px; /* Reduced */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px; /* Slightly smaller */
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.inline-field input:focus {
+  border-color: #334b65;
+  outline: none;
+}
+
+/* Buttons */
+.button-group {
+  grid-column: span 2; /* Full width */
+  margin-top: 14px; /* Reduced */
+}
+
+.button-group button {
+  padding: 8px 16px; /* Reduced */
+  background-color: #334b65;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px; /* Slightly smaller */
+  width: 20%;
+}
+
+.button-group button:hover {
+  background-color: #2a3c4f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .create-client-container {
+    margin-left: 0;
+    padding: 12px; /* Slightly smaller */
+  }
+
+  .inline-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .button-group button {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}

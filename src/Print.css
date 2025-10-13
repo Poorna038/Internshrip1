@@ -1,0 +1,70 @@
+.print-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  margin-left: 240px;
+  margin-top: 60px;
+}
+
+.print-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.search-input {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 250px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.invoice-table {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background-color: #fff;
+  font-size: 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.invoice-table th {
+  background-color: #0e2849;
+  color: white;
+  font-weight: 600;
+}
+
+.invoice-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.invoice-table tr:hover {
+  background-color: #eef4ff;
+}
+
+.print-icon {
+  font-size: 16px;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.print-icon:hover {
+  color: #0056b3;
+  transform: scale(1.1);
+}

@@ -1,0 +1,91 @@
+/* Container for the Login page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+}
+
+/* Login box styling */
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading style */
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Input fields style */
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Input fields on focus */
+.login-box input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit button style */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #151842;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.login-box button:hover {
+  background-color: #181f47;
+}
+
+/* Link to Create Account */
+.login-box p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-box p span {
+  color: #162146;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Hover effect for the "Create Account" link */
+.login-box p span:hover {
+  color: #12173a;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .login-box h2 {
+    font-size: 20px;
+  }
+}

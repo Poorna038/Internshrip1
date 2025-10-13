@@ -1,0 +1,131 @@
+.invoice-table {
+  margin-left: 250px; /* Adjust for sidebar if present */
+  padding: 20px;
+  min-height: 50vh;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+.invoice-table h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #334b65;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+/* Table Design */
+.invoice-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  font-size: 15px;
+}
+
+.invoice-table th {
+  background-color: #334b65;
+  color: white;
+}
+
+/* Sl No Cell */
+.invoice-table td:first-child {
+  font-weight: bold;
+  background-color: #f0f4f8;
+}
+
+/* Input Fields */
+.invoice-table input[type="text"],
+.invoice-table input[type="number"],
+.invoice-table input[type="date"] {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
+}
+
+/* Particulars Row */
+.item-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+/* Action Buttons */
+button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.save-btn {
+  background-color: #28a745;
+}
+
+.delete-btn,
+.delete-invoice-btn {
+  background-color: #dc3545;
+}
+
+/* Hover Effects */
+button:hover {
+  opacity: 0.9;
+}
+
+.invoice-table td span {
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.invoice-table td span:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invoice-table {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .invoice-table table,
+  .invoice-table th,
+  .invoice-table td {
+    font-size: 13px;
+  }
+
+  .item-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .invoice-table input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
