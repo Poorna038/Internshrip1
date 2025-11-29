@@ -1,14 +1,11 @@
-# netlify.toml ─ put at repo root
+# netlify.toml — put at repo root
 [build]
-  # run npm ci to install node deps and then build
   command = "npm ci && npm run build"
-  publish = "build"    # react-scripts outputs to 'build' by default
+  publish = "build"
 
-# Prevent Netlify from attempting to auto-detect and install Python deps.
-# This tells Netlify to ignore common backend files for language detection.
-[build.ignore]
-  files = ["requirements.txt", "Pipfile", "Pipfile.lock", "runtime.txt", "**/*.py", "backend/**"]
-
-# Optional: set the API URL for your frontend build (so your build embeds correct base)
 [build.environment]
   REACT_APP_API_URL = "https://internshrip1.onrender.com"
+
+# Optional: skip Netlify's asset processing if you want fewer automatic steps.
+[build.processing]
+  skip_processing = true
