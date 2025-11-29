@@ -13,6 +13,7 @@ DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://client_j937_user:IGMpRepv
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+Base = declarative_base()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
