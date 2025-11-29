@@ -7,9 +7,9 @@ from typing import List, Optional
 from datetime import date
 from passlib.context import CryptContext
 import bcrypt
+import os
 
-
-DATABASE_URL = "postgresql://postgres:root@localhost:5432/testdb"
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:root@localhost:5432/testdb")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
