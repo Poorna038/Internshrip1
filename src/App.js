@@ -19,7 +19,7 @@ import Dashboard from "./Dashboard";
 const AppLayout = ({ children }) => {
   const location = useLocation();
 
-  // Define routes where sidebar/taskbar should be hidden
+  
   const noSidebarRoutes = ["/login", "/signin"];
   const shouldHideSidebar = noSidebarRoutes.includes(location.pathname);
 

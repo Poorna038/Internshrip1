@@ -9,17 +9,15 @@ from passlib.context import CryptContext
 import bcrypt
 
 
-# ✅ Database Configuration
 DATABASE_URL = "postgresql://postgres:root@localhost:5432/testdb"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
 
-# ✅ Password hashing context for User
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# ✅ Models
+
 class Client(Base):
     __tablename__ = "client"
     id = Column(Integer, primary_key=True, index=True)
@@ -75,7 +73,7 @@ class Element(Base):
 
 Base.metadata.create_all(bind=engine)
 
-# ✅ Dependency
+
 def get_db():
     db = SessionLocal()
     try:
@@ -83,7 +81,6 @@ def get_db():
     finally:
         db.close()
 
-# ✅ Utility Functions
 def hash_password(password: str):
     return pwd_context.hash(password)
 
@@ -93,7 +90,7 @@ def verify_password(plain_password: str, hashed_password: str):
 def hash_password_element(password: str):
     return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
-# ✅ Pydantic Schemas
+
 class ClientCreate(BaseModel):
     name: str
     address: str
@@ -179,7 +176,7 @@ class LoginRequest(BaseModel):
 # ✅ FastAPI App
 app = FastAPI()
 
-# ✅ CORS
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:8000"],
