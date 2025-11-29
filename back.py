@@ -9,11 +9,10 @@ from passlib.context import CryptContext
 import bcrypt
 import os
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:root@localhost:5432/testdb")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://client_j937_user:IGMpRepvX6V8vq8yoM03LINXnj8lr4PQ@dpg-d4lgbh9r0fns73favtb0-a/client_j937")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-Base = declarative_base()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -376,4 +375,10 @@ def element_login(request: LoginRequest, db: Session = Depends(get_db)):
             "phone": element.phone
         }
     }
+# TEMP: create DB tables via HTTP (remove after use)
+@app.get("/create-tables-temp")
+def create_tables_temp():
+    # WARNING: remove this endpoint immediately after running once
+    Base.metadata.create_all(bind=engine)
+    return {"message": "Tables created"}
 
